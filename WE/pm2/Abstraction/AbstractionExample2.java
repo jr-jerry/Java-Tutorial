@@ -6,12 +6,20 @@ public class AbstractionExample2 {
         obj.display();
     }
 }
+interface Shape2{
+    //by default saare method h abstract method hote hai!
+    void area();
+    void display();    
+}
 abstract class Shape{
  abstract void area();
  abstract void display();
+ void m1(){
+    System.out.println("Shape method ");
+ }
 }
- 
-class Circle extends Shape{
+
+class Circle implements Shape2{
     int radius;
     double cirArea;
     public Circle(int radius) {
@@ -24,7 +32,7 @@ class Circle extends Shape{
          cirArea=3.14*radius*radius;
     }
     @Override
-    void display() {
+    public void display() {
          System.out.println("area of circle "+cirArea);
     }
 }
